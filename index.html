@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gautam Das - Creative Portfolio showcasing video editing, graphic design, photography, motion graphics and AI works.">
+  <title>GautamDas.HQ - Creative Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg-primary: #0f0f1e;
+      --bg-secondary: #1a1a2e;
+      --accent-1: #d4af37;
+      --accent-2: #e94560;
+      --accent-3: #00d9ff;
+      --text-primary: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Sora', 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .app-wrapper {
+      width: 100%;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    }
+
+    header {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      background: rgba(15, 15, 30, 0.7);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-1);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero-title-gradient {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-3), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+
+    .cta-button {
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+      color: var(--bg-primary);
+      border-radius: 50px;
+      font-weight: 700;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(233, 69, 96, 0.3);
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .section-title-accent {
+      color: var(--accent-1);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      opacity: 0.7;
+      margin-bottom: 3rem;
+    }
+
+    .portfolio-grid, .skills-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .portfolio-card, .skill-item {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .portfolio-card:hover, .skill-item:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-1);
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      background: var(--bg-secondary);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--text-primary);
+      opacity: 0.8;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-1);
+    }
+  </style>
+</head>
+
+<body>
+<div class="app-wrapper">
+
+<header>
+  <div class="logo">GautamDas.HQ</div>
+  <nav>
+    <a href="#portfolio">Work</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>
+      <span class="hero-title-gradient">Creative Excellence</span><br>
+      in Every Frame
+    </h1>
+    <p>Video Editing • Graphics Design • Photography • AI Works</p>
+    <button class="cta-button" type="button">Get in Touch</button>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2 class="section-title">Featured <span class="section-title-accent">Work</span></h2>
+  <p class="section-subtitle">Showcasing my latest projects</p>
+  <div class="portfolio-grid">
+    <div class="portfolio-card">🎬 Cinematic Reels</div>
+    <div class="portfolio-card">🎨 Visual Identity</div>
+    <div class="portfolio-card">📸 Photography</div>
+    <div class="portfolio-card">🤖 AI Projects</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About <span class="section-title-accent">Me</span></h2>
+  <p class="section-subtitle">
+    I'm a creative professional passionate about video, design, photography, and AI technologies.
+  </p>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills & <span class="section-title-accent">Expertise</span></h2>
+  <div class="skills-grid">
+    <div class="skill-item">🎥 Video Editing</div>
+    <div class="skill-item">🎨 Graphic Design</div>
+    <div class="skill-item">📷 Photography</div>
+    <div class="skill-item">🤖 AI Tools</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/gautamdas.hq?igsh=d3l5dnFuN3Bkdm1w">Instagram</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Behance</a>
+    <a href="mailto:contact@gautamdas.hq">Email</a>
+  </div>
+  <p>© 2024 GautamDas.HQ. All rights reserved.</p>
+</footer>
+
+</div>
+</body>
+</html>
